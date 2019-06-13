@@ -1,0 +1,75 @@
+
+body {
+    background-color: rgb(245, 245, 245);
+}
+
+
+/* The navigation bar */
+.navbar {
+    overflow: hidden;
+    background-color: rgb(245, 245, 245);
+    position: fixed; /* Set the navbar to fixed position */
+    bottom: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    border-top: thin solid;
+    border-top-color: rgb(200, 200, 200);
+}
+
+.navbar-top {
+    overflow: hidden;
+    background-color: rgb(245, 245, 245);
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    border-bottom: thin solid;
+    border-bottom-color: rgb(200, 200, 200);
+    font-family: "Helvetica";
+    color: rgb(35, 35, 35);
+    padding: 12px 14px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* Links inside the navbar */
+.navbar a {
+    float: left;
+    display: block;
+    color: rgb(35, 35, 35);
+    font-family: "Helvetica";
+    font-size: 20px;
+    text-align: center;
+    padding: 18px 20px;
+    text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+    background-color: rgb(200, 200, 200);
+}
+
+.selected-a {
+    float: left;
+    display: block;
+    color: #12664e;
+    font-family: "Helvetica";
+    font-size: 20px;
+    text-align: center;
+    padding: 18px 20px;
+    text-decoration: none;
+}
+
+/* Main content */
+.main {
+    margin-top: 90px; /* Add a top margin to avoid content overlay */
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 90px;
+}
+
+.text-box {
+    padding: 2px;
+    font-family: "Helvetica";
+    line-height: 1.25;
+    color: rgb(35, 35, 35);
+    text-align: justify;
+}
