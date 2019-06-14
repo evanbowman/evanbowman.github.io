@@ -9,6 +9,10 @@
     <link rel="stylesheet"
           type="text/css"
           href="css/gallery.css">
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/modal.css">
   </head>
 
   <div class="navbar-top">
@@ -22,155 +26,192 @@
     <a href="contact.html">Contact</a>
   </div>
 
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+
   <div class="main">
-    <div class="gallery-container">
-    <div class="gallery">
-      <a href="portfolio_2018-2019.html">
-        <img src="img/portfolio/2018-2019/thumbs/self-portrait-sketch.png" width="33%">
-      </a>
-      <div class="desc">Self portrait with sketchbook</div>
-    </div>
+    <div class="gallery-container" id="gallery-table">
 
-    <div class="gallery">
-      <a href="portfolio_2018-2019.html">
-        <img src="img/portfolio/2018-2019/thumbs/self-portrait.png" width="800" height="400">
-      </a>
-      <div class="desc">Self portrait</div>
-    </div>
+      <div class="gallery">
+        <a href="portfolio_2018-2019.html">
+          <img src="img/portfolio/2018-2019/thumbs/self-portrait-sketch.png">
+        </a>
+        <div class="desc">Self portrait with sketchbook</div>
+      </div>
 
-    <div class="gallery">
-      <a href="portfolio_2018-2019.html">
-        <img src="img/portfolio/2018-2019/thumbs/still-life-with-boots.png" width="800" height="400">
-      </a>
-      <div class="desc">still life with boots</div>
-    </div>
+      <div class="gallery">
+        <a href="portfolio_2018-2019.html">
+          <img src="img/portfolio/2018-2019/thumbs/self-portrait.png">
+        </a>
+        <div class="desc">Self portrait</div>
+      </div>
 
-    <div class="gallery">
-      <a href="portfolio_2018-2019.html">
-        <img src="img/portfolio/2018-2019/thumbs/arrangement-in-yellow-still-life.png" width="800" height="400">
-      </a>
-      <div class="desc">arrangement in yellow</div>
-    </div>
+      <div class="gallery">
+        <a href="portfolio_2018-2019.html">
+          <img src="img/portfolio/2018-2019/thumbs/still-life-with-boots.png">
+        </a>
+        <div class="desc">still life with boots</div>
+      </div>
 
-    <div class="gallery">
-      <a href="portfolio_2018-2019.html">
-        <img src="img/portfolio/2018-2019/thumbs/wilting-roses.png" width="800" height="400">
-      </a>
-      <div class="desc">wilting roses</div>
-    </div>
+      <div class="gallery">
+        <a href="portfolio_2018-2019.html">
+          <img src="img/portfolio/2018-2019/thumbs/arrangement-in-yellow-still-life.png">
+        </a>
+        <div class="desc">arrangement in yellow</div>
+      </div>
 
-    <div class="gallery">
-      <a href="portfolio_2018-2019.html">
-        <img src="img/portfolio/2018-2019/thumbs/still-life-roses-glass.png" width="800" height="400">
-      </a>
-      <div class="desc">roses in a glass</div>
-    </div>
+      <div class="gallery">
+        <a href="portfolio_2018-2019.html">
+          <img src="img/portfolio/2018-2019/thumbs/wilting-roses.png">
+        </a>
+        <div class="desc">wilting roses</div>
+      </div>
 
-    <div class="gallery">
-      <a href="portfolio_2018-2019.html">
-        <img src="img/portfolio/2018-2019/thumbs/study-of-birch-trees.png" width="800" height="400">
-      </a>
-      <div class="desc">study of birch trees</div>
-    </div>
+      <div class="gallery">
+        <a href="portfolio_2018-2019.html">
+          <img src="img/portfolio/2018-2019/thumbs/still-life-roses-glass.png">
+        </a>
+        <div class="desc">roses in a glass</div>
+      </div>
 
-    <div class="gallery">
-      <a href="portfolio_2018-2019.html">
-        <img src="img/portfolio/2018-2019/thumbs/banyan-trees-hawaii.png" width="800" height="400">
-      </a>
-      <div class="desc">banyan trees (Hawaii)</div>
-    </div>
+      <div class="gallery">
+        <a href="portfolio_2018-2019.html">
+          <img src="img/portfolio/2018-2019/thumbs/study-of-birch-trees.png">
+        </a>
+        <div class="desc">study of birch trees</div>
+      </div>
 
-    <div class="gallery">
-      <a href="portfolio_2018-2019.html">
-        <img src="img/portfolio/2018-2019/thumbs/maine-seascape.png" width="800" height="400">
-      </a>
-      <div class="desc">Maine seascape</div>
-    </div>
+      <div class="gallery">
+        <a href="portfolio_2018-2019.html">
+          <img src="img/portfolio/2018-2019/thumbs/banyan-trees-hawaii.png">
+        </a>
+        <div class="desc">banyan trees (Hawaii)</div>
+      </div>
 
-    <div class="gallery">
-      <a href="portfolio_2018-2019.html">
-        <img src="img/portfolio/2018-2019/thumbs/seascape-by-oahu.png" width="800" height="400">
-      </a>
-      <div class="desc">seascape by Oahu</div>
-    </div>
+      <div class="gallery">
+        <a href="portfolio_2018-2019.html">
+          <img src="img/portfolio/2018-2019/thumbs/maine-seascape.png">
+        </a>
+        <div class="desc">Maine seascape</div>
+      </div>
 
-    <div class="gallery">
-      <a href="portfolio_2018-2019.html">
-        <img src="img/portfolio/2018-2019/thumbs/waltham-public-library.png" width="800" height="400">
-      </a>
-      <div class="desc">waltham public library</div>
-    </div>
+      <div class="gallery">
+        <a href="portfolio_2018-2019.html">
+          <img src="img/portfolio/2018-2019/thumbs/seascape-by-oahu.png">
+        </a>
+        <div class="desc">seascape by Oahu</div>
+      </div>
 
-    <div class="gallery">
-      <a href="portfolio_2018-2019.html">
-        <img src="img/portfolio/2018-2019/thumbs/boston-common-fountain.png" width="800" height="400">
-      </a>
-      <div class="desc">boston common, fountain</div>
-    </div>
+      <div class="gallery">
+        <a href="portfolio_2018-2019.html">
+          <img src="img/portfolio/2018-2019/thumbs/waltham-public-library.png">
+        </a>
+        <div class="desc">waltham public library</div>
+      </div>
 
-    <div class="gallery">
-      <a href="portfolio_2018-2019.html">
-        <img src="img/portfolio/2018-2019/thumbs/public-garden-bridge.png" width="800" height="400">
-      </a>
-      <div class="desc">boston gardens, bridge, winter</div>
-    </div>
+      <div class="gallery">
+        <a href="portfolio_2018-2019.html">
+          <img src="img/portfolio/2018-2019/thumbs/boston-common-fountain.png">
+        </a>
+        <div class="desc">boston common, fountain</div>
+      </div>
 
-    <div class="gallery">
-      <a href="portfolio_2018-2019.html">
-        <img src="img/portfolio/2018-2019/thumbs/figure-study.png" width="800" height="400">
-      </a>
-      <div class="desc">figure study</div>
-    </div>
+      <div class="gallery">
+        <a href="portfolio_2018-2019.html">
+          <img src="img/portfolio/2018-2019/thumbs/public-garden-bridge.png">
+        </a>
+        <div class="desc">boston gardens, bridge, winter</div>
+      </div>
 
-    <div class="gallery">
-      <a href="portfolio_2018-2019.html">
-        <img src="img/portfolio/2018-2019/thumbs/drawing-of-ben.png" width="800" height="400">
-      </a>
-      <div class="desc">drawing of Ben Casler</div>
-    </div>
+      <div class="gallery">
+        <a href="portfolio_2018-2019.html">
+          <img src="img/portfolio/2018-2019/thumbs/figure-study.png">
+        </a>
+        <div class="desc">figure study</div>
+      </div>
 
-    <div class="gallery">
-      <a href="portfolio_2018-2019.html">
-        <img src="img/portfolio/2018-2019/thumbs/las-meninas.png" width="800" height="400">
-      </a>
-      <div class="desc">Las Meninas, copy after Velazquez</div>
-    </div>
+      <div class="gallery">
+        <a href="portfolio_2018-2019.html">
+          <img src="img/portfolio/2018-2019/thumbs/drawing-of-ben.png">
+        </a>
+        <div class="desc">drawing of Ben Casler</div>
+      </div>
 
-    <div class="gallery">
-      <a href="portfolio_2018-2019.html">
-        <img src="img/portfolio/2018-2019/thumbs/el-jaleo.png" width="800" height="400">
-      </a>
-      <div class="desc">El Jaleo, copy after Sargent</div>
-    </div>
+      <div class="gallery">
+        <a href="portfolio_2018-2019.html">
+          <img src="img/portfolio/2018-2019/thumbs/las-meninas.png">
+        </a>
+        <div class="desc">Las Meninas, copy after Velazquez</div>
+      </div>
 
-    <div class="gallery">
-      <a href="portfolio_2018-2019.html">
-        <img src="img/portfolio/2018-2019/thumbs/reconnoitering.png" width="800" height="400">
-      </a>
-      <div class="desc">Reconnoitering, copy after Sargent</div>
-    </div>
+      <div class="gallery">
+        <a href="portfolio_2018-2019.html">
+          <img src="img/portfolio/2018-2019/thumbs/el-jaleo.png">
+        </a>
+        <div class="desc">El Jaleo, copy after Sargent</div>
+      </div>
 
-    <div class="gallery">
-      <a href="portfolio_2018-2019.html">
-        <img src="img/portfolio/2018-2019/thumbs/fishing-for-oysters_copy.png" width="800" height="400">
-      </a>
-      <div class="desc">Fishing for Oysters, after Sargent</div>
-    </div>
+      <div class="gallery">
+        <a href="portfolio_2018-2019.html">
+          <img src="img/portfolio/2018-2019/thumbs/reconnoitering.png">
+        </a>
+        <div class="desc">Reconnoitering, copy after Sargent</div>
+      </div>
 
-    <div class="gallery">
-      <a href="portfolio_2018-2019.html">
-        <img src="img/portfolio/2018-2019/thumbs/rembrandt-sp-2c.jpg" width="800" height="400">
-      </a>
-      <div class="desc">Self Portrait, copy after Rembrandt</div>
-    </div>
+      <div class="gallery">
+        <a href="portfolio_2018-2019.html">
+          <img src="img/portfolio/2018-2019/thumbs/fishing-for-oysters_copy.png">
+        </a>
+        <div class="desc">Fishing for Oysters, after Sargent</div>
+      </div>
 
-    <div class="gallery">
-      <a href="portfolio_2018-2019.html">
-        <img src="img/portfolio/2018-2019/thumbs/velazquez-arachne.png" width="800" height="400">
-      </a>
-      <div class="desc">Arachne, copy after Velazquez</div>
-    </div>
+      <div class="gallery">
+        <a href="portfolio_2018-2019.html">
+          <img src="img/portfolio/2018-2019/thumbs/rembrandt-sp-2c.jpg">
+        </a>
+        <div class="desc">Self Portrait, copy after Rembrandt</div>
+      </div>
+
+      <div class="gallery">
+        <a href="portfolio_2018-2019.html">
+          <img src="img/portfolio/2018-2019/thumbs/velazquez-arachne.png">
+        </a>
+        <div class="desc">Arachne, copy after Velazquez</div>
+      </div>
     </div>
   </div>
+
+  <script>
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+
+    var table = document.getElementById("gallery-table");
+    for (var i = 0; i < table.children.length; ++i) {
+        var child = table.children[i];
+        var image = child.children[0].children[0];
+        var div = document.createElement("DIV");
+        div.appendChild(image);
+        child.replaceChild(div, child.children[0]);
+        (function(image, div) {
+            div.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = image.src.split("thumbs/").join("").replace(/.png/, ".jpg");
+            }
+        })(image, div);
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+  </script>
+
 
 </html>
