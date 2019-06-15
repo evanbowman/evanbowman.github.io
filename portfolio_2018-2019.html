@@ -197,15 +197,17 @@
     for (var i = 0; i < table.children.length; ++i) {
         var child = table.children[i];
         var image = child.children[0].children[0];
+        var desc = child.children[1];
         var div = document.createElement("DIV");
         div.appendChild(image);
         child.replaceChild(div, child.children[0]);
-        (function(image, div) {
+        (function(image, div, desc) {
             div.onclick = function() {
                 modal.style.display = "block";
                 modalImg.src = image.src.split("thumbs/").join("").replace(/.png/, ".jpg");
+                captionText.innerHTML = desc.innerHTML;
             }
-        })(image, div);
+        })(image, div, desc);
     }
 
     // Get the <span> element that closes the modal
