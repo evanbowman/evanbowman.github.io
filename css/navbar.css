@@ -66,9 +66,19 @@ body {
     margin-bottom: 90px;
 }
 
+@font-face {
+  font-family:"Caslon-Pro";
+  src: local('Adobe Caslon Pro'),
+       url("../font/Caslon_Pro_Regular.ttf") format("truetype");
+}
+
 .text-box {
     padding: 2px;
-    font-family: "Helvetica";
+    font-family: 'Caslon-Pro';
+    font-size: large;
+    /* font-style: normal; */
+    /* font-weight: 400; */
+    /* font-family: "Helvetica"; */
     line-height: 1.25;
     color: rgb(35, 35, 35);
     text-align: justify;
