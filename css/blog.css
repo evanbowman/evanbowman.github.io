@@ -13,6 +13,7 @@ sub {
     border-bottom: thin solid;
     border-bottom-color: rgb(200, 200, 200);
     margin-bottom: 40px;
+    margin-top: 10px;
 }
 
 .date {
@@ -31,4 +32,30 @@ sub {
     left: 8px;
     top: 8px;
     right: 5px;
+}
+
+.load_comments {
+
+}
+
+.comments {
+    margin-top: 8px;
+    display: none;
+}
+
+.comment_box {
+    border-color: rgb(200, 200, 200);
+    background-color: rgb(245, 245, 245);
+    margin-bottom: 12px;
+    padding: 6px;
+    margin-left: 15px;
+}
+
+.comment_head {
+    font-family: "Helvetica";
+}
+
+.comment_body {
+    margin-top: 4px;
+    font-size: large;
 }
