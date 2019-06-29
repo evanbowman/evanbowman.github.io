@@ -1,3 +1,5 @@
+@import url("navbar.css");
+
 .gallery-container {
     text-align: center;
 }
@@ -34,7 +36,7 @@ div.gallery img {
 div.desc {
     padding: 15px;
     text-align: center;
-    font-family: "Helvetica";
+    font-family: "Caslon-Pro";
     color: rgb(35, 35, 35);
-    font-size: 14px;
+    font-size: 15px;
 }

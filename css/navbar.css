@@ -1,6 +1,7 @@
+@import url("font.css");
 
 body {
-    background-color: rgb(245, 245, 245);
+    /* background-color: rgb(245, 245, 245); */
 }
 
 
@@ -64,12 +65,6 @@ body {
     margin-left: 10%;
     margin-right: 10%;
     margin-bottom: 90px;
-}
-
-@font-face {
-  font-family:"Caslon-Pro";
-  src: local('Adobe Caslon Pro'),
-       url("../font/Caslon_Pro_Regular.ttf") format("truetype");
 }
 
 .text-box {
