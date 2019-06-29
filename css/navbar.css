@@ -79,6 +79,18 @@ body {
     text-align: justify;
 }
 
+.name-logo {
+    font-family: "Helvetica";
+    font-size: 26px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.link-box {
+    text-align: right;
+    padding-right: 20px;
+}
+
 .image-link {
     margin-left: 5px;
 }
