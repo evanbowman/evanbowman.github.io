@@ -13,3 +13,7 @@ sub {
     border-bottom-color: rgb(200, 200, 200);
     margin-bottom: 40px;
 }
+
+.date {
+    font-family: "Helvetica";
+}
