@@ -17,3 +17,14 @@ sub {
 .date {
     font-family: "Helvetica";
 }
+
+.color-box {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    background-color: #ccc;
+
+    left: 8px;
+    top: 8px;
+    right: 5px;
+}

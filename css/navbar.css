@@ -83,3 +83,7 @@ body {
     color: rgb(35, 35, 35);
     text-align: justify;
 }
+
+.image-link {
+    margin-left: 5px;
+}
