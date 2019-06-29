@@ -1,0 +1,15 @@
+
+h3 {
+    font-family: "Helvetica";
+}
+
+sub {
+    color: rgb(128, 128, 128);
+    font-size: small;
+}
+
+.separator {
+    border-bottom: thin solid;
+    border-bottom-color: rgb(200, 200, 200);
+    margin-bottom: 40px;
+}
