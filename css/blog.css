@@ -59,3 +59,28 @@ sub {
     margin-top: 4px;
     font-size: large;
 }
+
+
+.post-image {
+    width: 700px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 700px) {
+    .post-image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .post-image {
+        width: 100%;
+        height: auto;
+    }
+}
