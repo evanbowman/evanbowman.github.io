@@ -32,7 +32,7 @@ body {
 }
 
 /* Links inside the navbar */
-.navbar a {
+.navbar .tab {
     float: left;
     display: block;
     color: rgb(35, 35, 35);
@@ -44,11 +44,11 @@ body {
 }
 
 /* Change background on mouse-over */
-.navbar a:hover {
+.navbar .tab:hover {
     background-color: rgb(200, 200, 200);
 }
 
-.selected-a {
+.selected-tab {
     float: left;
     display: block;
     color: #12664e;
