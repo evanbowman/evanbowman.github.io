@@ -4,6 +4,7 @@ h3 {
     font-family: "Helvetica";
 }
 
+
 sub {
     color: rgb(128, 128, 128);
     font-size: small;
@@ -61,7 +62,7 @@ sub {
 }
 
 
-.post-image {
+.post-image-large {
     width: 700px;
     height: auto;
     display: block;
@@ -71,15 +72,49 @@ sub {
     margin-bottom: 40px;
 }
 
+.post-image-medium {
+    width: 500px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.trifold {
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+}
+
+.trifold-content {
+    width: 30%;
+    height: auto;
+    margin: 5px;
+}
+
 @media only screen and (max-width: 700px) {
-    .post-image {
+    .trifold-content {
+        width: 90%;
+    }
+
+    .post-image-large {
+        width: 100%;
+        height: auto;
+    }
+    .post-image-medium {
         width: 100%;
         height: auto;
     }
 }
 
 @media only screen and (max-width: 500px) {
-    .post-image {
+    .post-image-large {
+        width: 100%;
+        height: auto;
+    }
+    .post-image-medium {
         width: 100%;
         height: auto;
     }

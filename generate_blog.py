@@ -8,6 +8,7 @@ import htmlmin
 
 
 posts_dir = "posts/"
+post_title = '<span class="date">%s</span><h3>%s</h3>'
 post_separator = '<div><u class="load-comments" id="%s"></u><div class="comments"></div></div><div class="separator"></div>'
 
 
@@ -44,7 +45,9 @@ while posts:
     out = "" + header
     for post in posts[-1 * posts_per_page:]:
         ident = post.split(".")[0]
-        content = file_contents(posts_dir + post)
+        with open(posts_dir + post, "r") as post_file:
+            meta = next(post_file).split(",")
+            content = (post_title % (meta[3], meta[1])) + post_file.read()
         separator = post_separator % ident
         result = htmlmin.minify(content) + separator
         out += result
