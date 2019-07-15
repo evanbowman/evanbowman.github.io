@@ -40,6 +40,7 @@ header, footer = load_template()
 
 
 posts = load_post_file_names()
+posts.sort(key = lambda x: int(x.split('.')[0]), reverse = True)
 
 
 blog_page = 0
@@ -52,7 +53,9 @@ while posts:
     page_name = "blog_page_%s.html" % blog_page
 
     out = "" + header("blog posts", page_name)
+    print(posts)
     for post in posts[-1 * posts_per_page:]:
+        print(post)
         ident = post.split(".")[0]
         post_page_name = "post_%s.html" % ident
         with open(posts_dir + post, "r") as post_file:
