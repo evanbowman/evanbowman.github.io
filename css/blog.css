@@ -63,7 +63,7 @@ sub {
 
 
 .post-image-large {
-    width: 700px;
+    width: 850px;
     height: auto;
     display: block;
     margin-left: auto;
@@ -73,7 +73,7 @@ sub {
 }
 
 .post-image-medium {
-    width: 500px;
+    width: 700px;
     height: auto;
     display: block;
     margin-left: auto;
