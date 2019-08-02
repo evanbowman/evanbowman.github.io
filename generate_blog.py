@@ -1,3 +1,4 @@
+
 import os
 import htmlmin
 
@@ -30,7 +31,7 @@ def load_template():
     return header, footer
 
 
-def load_post_file_names():
+def load_post_file_names(topic):
     for root, dirs, files in os.walk(posts_dir):
         # note: ignore my emacs temporary files
         return [f for f in files if not '~' in f]
@@ -39,46 +40,47 @@ def load_post_file_names():
 header, footer = load_template()
 
 
-posts = load_post_file_names()
-posts.sort(key = lambda x: int(x.split('.')[0]), reverse = True)
+def make_topic_feed(topic):
+    blog_page = 0
+
+    posts = load_post_file_names(topic)
+    posts.sort(key = lambda x: int(x.split('.')[0]), reverse = True)
+
+    posts_per_page = 6
+
+    while posts:
+        page_name = "blog_page_%s.html" % blog_page
+
+        out = "" + header("blog posts", page_name)
+        print(posts)
+        for post in posts[-1 * posts_per_page:]:
+            print(post)
+            ident = post.split(".")[0]
+            post_page_name = "post_%s.html" % ident
+            with open(posts_dir + post, "r") as post_file:
+                meta = next(post_file).split(",")
+                content = (post_title % (meta[3], post_page_name, meta[1])) + post_file.read()
+            separator = post_separator % ident
+            result = htmlmin.minify(content) + separator
+            out += result
+            # Write each post to a unique file, so that people can share links to
+            # the specific post.
+            with open(post_page_name, "w") as post_file:
+                post_file.write(htmlmin.minify(header(meta[1], post_page_name) + result + footer))
+            posts.pop()
+
+        if blog_page != 0:
+            out += '<a href="blog_page_%s.html">older posts</a>' % (blog_page - 1)
+
+        out += footer
+
+        with open(page_name, "w") as out_file:
+            out_file.write(htmlmin.minify(out))
+
+        blog_page += 1
+
+        if not topic:
+            os.system("mv blog_page_%s.html index.html" % (blog_page - 1))
 
 
-blog_page = 0
-
-
-posts_per_page = 6
-
-
-while posts:
-    page_name = "blog_page_%s.html" % blog_page
-
-    out = "" + header("blog posts", page_name)
-    print(posts)
-    for post in posts[-1 * posts_per_page:]:
-        print(post)
-        ident = post.split(".")[0]
-        post_page_name = "post_%s.html" % ident
-        with open(posts_dir + post, "r") as post_file:
-            meta = next(post_file).split(",")
-            content = (post_title % (meta[3], post_page_name, meta[1])) + post_file.read()
-        separator = post_separator % ident
-        result = htmlmin.minify(content) + separator
-        out += result
-        # Write each post to a unique file, so that people can share links to
-        # the specific post.
-        with open(post_page_name, "w") as post_file:
-            post_file.write(htmlmin.minify(header(meta[1], post_page_name) + result + footer))
-        posts.pop()
-
-    if blog_page != 0:
-        out += '<a href="blog_page_%s.html">older posts</a>' % (blog_page - 1)
-
-    out += footer
-
-    with open(page_name, "w") as out_file:
-        out_file.write(htmlmin.minify(out))
-
-    blog_page += 1
-
-
-os.system("mv blog_page_%s.html index.html" % (blog_page - 1))
+make_topic_feed(None)
