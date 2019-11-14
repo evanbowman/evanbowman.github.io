@@ -39,6 +39,12 @@ sub {
 
 }
 
+.blog-main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 850px;
+}
+
 .comments {
     margin-top: 8px;
     display: none;
@@ -103,6 +109,7 @@ sub {
     color: rgb(35, 35, 35);
     text-align: center;
     margin-bottom: 40px;
+    font-style: italic;
 }
 
 .title-link {
@@ -127,6 +134,11 @@ sub {
         width: 100%;
         height: auto;
     }
+    .blog-main {
+        margin-left: 10%;
+        margin-right: 10%;
+        width: auto;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -137,5 +149,10 @@ sub {
     .post-image-medium {
         width: 100%;
         height: auto;
+    }
+    .blog-main {
+        margin-left: 10%;
+        margin-right: 10%;
+        width: auto;
     }
 }
