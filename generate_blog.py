@@ -1,6 +1,7 @@
 
 import os
 import htmlmin
+from PIL import Image
 
 #
 # This script assembles the posts in the posts/ directory into a series of blog
@@ -83,4 +84,28 @@ def make_topic_feed(topic):
         os.system("mv blog_page_%s.html index.html" % (blog_page - 1))
 
 
+
 make_topic_feed(None)
+
+
+
+def compile_thumbnails(directory):
+
+    for name in os.listdir(directory):
+
+        full_path = directory + name
+
+        if os.path.isfile(full_path):
+            print("[COMPILE THUMBNAIL]: " + full_path)
+            img = Image.open(directory + name)
+            aspect = float(img.size[1]) / img.size[0]
+
+            new_img = img.resize((300, int(300 * aspect)), Image.ANTIALIAS)
+
+            new_img.save(directory + "thumbs/" + name.split('.')[0] + ".png")
+
+
+
+portfolio_dir = "img/portfolio/"
+for folder in os.listdir(portfolio_dir):
+    compile_thumbnails(portfolio_dir + folder + "/")
