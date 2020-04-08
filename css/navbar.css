@@ -74,9 +74,8 @@ body {
     /* font-style: normal; */
     /* font-weight: 400; */
     /* font-family: "Helvetica"; */
-    line-height: 1.35;
+    line-height: 1.5;
     color: rgb(35, 35, 35);
-    text-align: justify;
 }
 
 .name-logo {
@@ -93,4 +92,13 @@ body {
 
 .image-link {
     margin-left: 5px;
+}
+
+.paragraph-1::first-letter {
+    float: left;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 15px;
+    padding-right: 8px;
+    padding-left: 3px;
 }
