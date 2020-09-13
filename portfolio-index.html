@@ -1,4 +1,4 @@
-g---
+---
 # empty front matter
 ---
 <!DOCTYPE html>
@@ -8,6 +8,10 @@ g---
     <link rel="stylesheet"
           type="text/css"
           href="css/gallery.css">
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/modal.css">
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
   </head>
@@ -39,24 +43,243 @@ g---
     <a class="tab" href="contact.html">Contact</a>
   </div>
 
-  <div class="main">
-    <div class="gallery">
-      <a href="portfolio_2018-2019.html">
-        <img src="img/portfolio/2018-2019/thumbs/still-life-roses-glass.png"
-             width="600"
-             height="400">
-      </a>
-      <div class="desc">June 2018 - May 2019</div>
-    </div>
-
-    <div class="gallery">
-      <a href="portfolio_2019-2020.html">
-        <img src="img/portfolio/2019-2020/thumbs/still-life-carnations.png"
-             width="600"
-             height="400">
-      </a>
-      <div class="desc">June 2019 - May 2020</div>
-    </div>
-
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
   </div>
+
+  <div class="main">
+    <div class="gallery-container" id="gallery-table">
+
+      <!-- <div class="gallery"> -->
+      <!--   <a href="portfolio-index.html"> -->
+      <!--     <img src="img/portfolio/2018-2019/thumbs/self-portrait-sketch.png"> -->
+      <!--   </a> -->
+      <!--   <div class="desc">Self portrait with sketchbook</div> -->
+      <!-- </div> -->
+
+      <!-- <div class="gallery"> -->
+      <!--   <a href="portfolio-index.html"> -->
+      <!--     <img src="img/portfolio/2018-2019/thumbs/self-portrait.png"> -->
+      <!--   </a> -->
+      <!--   <div class="desc">Self portrait</div> -->
+      <!-- </div> -->
+
+      <!-- <div class="gallery"> -->
+      <!--   <a href="portfolio-index.html"> -->
+      <!--     <img src="img/portfolio/2018-2019/thumbs/still-life-with-boots.png"> -->
+      <!--   </a> -->
+      <!--   <div class="desc">still life with boots</div> -->
+      <!-- </div> -->
+
+      <!-- <div class="gallery"> -->
+      <!--   <a href="portfolio-index.html"> -->
+      <!--     <img src="img/portfolio/2018-2019/thumbs/arrangement-in-yellow-still-life.png"> -->
+      <!--   </a> -->
+      <!--   <div class="desc">still life in yellow</div> -->
+      <!-- </div> -->
+
+      <div class="gallery">
+        <a href="portfolio-index.html">
+          <img src="img/portfolio/2018-2019/thumbs/still-life-roses-glass.png">
+        </a>
+        <div class="desc">Roses in a glass<br>Oil on panel, 2019</div>
+      </div>
+
+      <div class="gallery">
+        <a href="portfolio-index.html">
+          <img src="img/portfolio/2018-2019/thumbs/wilting-roses.png">
+        </a>
+        <div class="desc">Wilting roses<br>Oil on panel, 2019</div>
+      </div>
+
+      <!-- <div class="gallery"> -->
+      <!--   <a href="portfolio-index.html"> -->
+      <!--     <img src="img/portfolio/2018-2019/thumbs/banyan-trees-hawaii.png"> -->
+      <!--   </a> -->
+      <!--   <div class="desc">banyan trees (Hawaii)</div> -->
+      <!-- </div> -->
+
+      <!-- <div class="gallery"> -->
+      <!--   <a href="portfolio-index.html"> -->
+      <!--     <img src="img/portfolio/2018-2019/thumbs/study-of-birch-trees.png"> -->
+      <!--   </a> -->
+      <!--   <div class="desc">study of birch trees</div> -->
+      <!-- </div> -->
+
+      <!-- <div class="gallery"> -->
+      <!--   <a href="portfolio-index.html"> -->
+      <!--     <img src="img/portfolio/2018-2019/thumbs/maine-seascape.png"> -->
+      <!--   </a> -->
+      <!--   <div class="desc">Maine seascape</div> -->
+      <!-- </div> -->
+
+      <div class="gallery">
+        <a href="portfolio-index.html">
+          <img src="img/portfolio/2019-2020/thumbs/glass-of-water.png">
+        </a>
+        <div class="desc">Glass of water<br>Oil on panel, 2020</div>
+      </div>
+
+      <!-- <div class="gallery"> -->
+      <!--   <a href="portfolio-index.html"> -->
+      <!--     <img src="img/portfolio/2018-2019/thumbs/waltham-public-library.png"> -->
+      <!--   </a> -->
+      <!--   <div class="desc">Waltham public library</div> -->
+      <!-- </div> -->
+
+      <!-- <div class="gallery"> -->
+      <!--   <a href="portfolio-index.html"> -->
+      <!--     <img src="img/portfolio/2018-2019/thumbs/public-garden-bridge.png"> -->
+      <!--   </a> -->
+      <!--   <div class="desc">Boston gardens, bridge, winter</div> -->
+      <!-- </div> -->
+
+      <!-- <div class="gallery"> -->
+      <!--   <a href="portfolio-index.html"> -->
+      <!--     <img src="img/portfolio/2018-2019/thumbs/boston-common-fountain.png"> -->
+      <!--   </a> -->
+      <!--   <div class="desc">Boston common, fountain</div> -->
+      <!-- </div> -->
+
+      <div class="gallery">
+        <a href="portfolio-index.html">
+          <img src="img/portfolio/2019-2020/thumbs/carnations.png">
+        </a>
+        <div class="desc">Carnations<br>Oil on panel, 2019</div>
+      </div>
+
+      <div class="gallery">
+        <a href="portfolio-index.html">
+          <img src="img/portfolio/2019-2020/thumbs/self-portrait-straw-hat.png">
+        </a>
+        <div class="desc">Self Portrait with straw hat<br>Oil on panel, 2020</div>
+      </div>
+
+      <div class="gallery">
+        <a href="portfolio-index.html">
+          <img src="img/portfolio/2019-2020/thumbs/profile.png">
+        </a>
+        <div class="desc">Self Portrait in Profile<br>Oil on panel, 2020</div>
+      </div>
+
+      <div class="gallery">
+        <a href="portfolio-index.html">
+          <img src="img/portfolio/2018-2019/thumbs/seascape-by-oahu.png">
+        </a>
+        <div class="desc">Seascape by Oahu<br>Gouache on paper, 2019</div>
+      </div>
+
+      <div class="gallery">
+        <a href="portfolio-index.html">
+          <img src="img/portfolio/2019-2020/thumbs/fading-light-over-cadillac-mountain.png">
+        </a>
+        <div class="desc">Fading light over Cadillac Mountain<br>Gouache on paper, 2020</div>
+      </div>
+
+      <div class="gallery">
+        <a href="portfolio-index.html">
+          <img src="img/portfolio/2019-2020/thumbs/self-portrait.png">
+        </a>
+        <div class="desc">Self Portrait<br>Oil on panel, 2020</div>
+      </div>
+
+      <div class="gallery">
+        <a href="portfolio-index.html">
+          <img src="img/portfolio/2019-2020/thumbs/self-portrait-closeup.png">
+        </a>
+        <div class="desc">Self Portrait (closeup)<br>Oil on panel, 2020</div>
+      </div>
+
+
+      <!-- <div class="gallery"> -->
+      <!--   <a href="portfolio-index.html"> -->
+      <!--     <img src="img/portfolio/2018-2019/thumbs/figure-study.png"> -->
+      <!--   </a> -->
+      <!--   <div class="desc">figure study</div> -->
+      <!-- </div> -->
+
+      <!-- <div class="gallery"> -->
+      <!--   <a href="portfolio-index.html"> -->
+      <!--     <img src="img/portfolio/2018-2019/thumbs/drawing-of-ben.png"> -->
+      <!--   </a> -->
+      <!--   <div class="desc">drawing of Ben Casler</div> -->
+      <!-- </div> -->
+
+      <!-- <div class="gallery"> -->
+      <!--   <a href="portfolio-index.html"> -->
+      <!--     <img src="img/portfolio/2018-2019/thumbs/las-meninas.png"> -->
+      <!--   </a> -->
+      <!--   <div class="desc">Las Meninas, copy after Velazquez</div> -->
+      <!-- </div> -->
+
+      <!-- <div class="gallery"> -->
+      <!--   <a href="portfolio-index.html"> -->
+      <!--     <img src="img/portfolio/2018-2019/thumbs/el-jaleo.png"> -->
+      <!--   </a> -->
+      <!--   <div class="desc">El Jaleo, copy after Sargent</div> -->
+      <!-- </div> -->
+
+      <!-- <div class="gallery"> -->
+      <!--   <a href="portfolio-index.html"> -->
+      <!--     <img src="img/portfolio/2018-2019/thumbs/reconnoitering.png"> -->
+      <!--   </a> -->
+      <!--   <div class="desc">Reconnoitering, copy after Sargent</div> -->
+      <!-- </div> -->
+
+      <!-- <div class="gallery"> -->
+      <!--   <a href="portfolio-index.html"> -->
+      <!--     <img src="img/portfolio/2018-2019/thumbs/fishing-for-oysters_copy.png"> -->
+      <!--   </a> -->
+      <!--   <div class="desc">Fishing for Oysters, after Sargent</div> -->
+      <!-- </div> -->
+
+      <!-- <div class="gallery"> -->
+      <!--   <a href="portfolio-index.html"> -->
+      <!--     <img src="img/portfolio/2018-2019/thumbs/rembrandt-sp-2c.jpg"> -->
+      <!--   </a> -->
+      <!--   <div class="desc">Self Portrait, copy after Rembrandt</div> -->
+      <!-- </div> -->
+
+      <!-- <div class="gallery"> -->
+      <!--   <a href="portfolio-index.html"> -->
+      <!--     <img src="img/portfolio/2018-2019/thumbs/velazquez-arachne.png"> -->
+      <!--   </a> -->
+      <!--   <div class="desc">Arachne, copy after Velazquez</div> -->
+      <!-- </div> -->
+    </div>
+  </div>
+
+  <script>
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+
+    var table = document.getElementById("gallery-table");
+    for (var i = 0; i < table.children.length; ++i) {
+        var child = table.children[i];
+        var image = child.children[0].children[0];
+        var desc = child.children[1];
+        var div = document.createElement("DIV");
+        div.appendChild(image);
+        child.replaceChild(div, child.children[0]);
+        (function(image, div, desc) {
+            div.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = image.src.split("thumbs/").join("").replace(/.png/, ".jpg");
+                captionText.innerHTML = desc.innerHTML;
+            }
+        })(image, div, desc);
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+  </script>
+
 </html>

@@ -101,7 +101,7 @@ def compile_thumbnails(directory):
             img = Image.open(directory + name)
             aspect = float(img.size[1]) / img.size[0]
 
-            new_img = img.resize((300, int(300 * aspect)), Image.ANTIALIAS)
+            new_img = img.resize((400, int(400 * aspect)), Image.ANTIALIAS)
 
             new_img.save(thumb_name)
 

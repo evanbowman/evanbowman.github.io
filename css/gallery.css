@@ -9,7 +9,7 @@ div.gallery {
     border: 1px solid #ccc;
     display: inline-block;
     /* float: left; */
-    width: 250px;
+    width: 325px;
 }
 
 @media only screen and (max-width: 700px) {
@@ -38,5 +38,6 @@ div.desc {
     text-align: center;
     font-family: "Caslon-Pro";
     color: rgb(35, 35, 35);
-    font-size: 15px;
+    font-size: 16px;
+    line-height: 1.5;
 }
