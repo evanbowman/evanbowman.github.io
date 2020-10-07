@@ -1,0 +1,65 @@
+---
+# empty front matter
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    {% seo %}
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/gallery.css">
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/modal.css">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  </head>
+
+  <div class="navbar-top">
+    <table style="width:100%">
+      <tr>
+        <th class="name-logo">Evan Bowman</th>
+        <th class="link-box">
+          <div class="link-box">
+            <a href="http://www.instagram.com/evanbowman/" class="image-link">
+              <img src="img/instagram-glyph-logo_May2016.png"
+                   width="22" height="22" marginLeft="70px">
+            </a>
+            <a href="https://www.youtube.com/channel/UCvxXrhWVlzmOLsBozbMY1zQ?view_as=subscriber"
+               class="image-link">
+              <img src="img/yt_icon_mono_light.png" width="32" height="22">
+            </a>
+          </div>
+        </th>
+      </tr>
+    </table>
+  </div>
+
+  <div class="navbar">
+    <a class="tab" href="index.html">Notes</a>
+    <a class="selected-tab" href="portfolio-index.html">Portfolio</a>
+    <a class="tab" href="bio.html">Bio</a>
+  </div>
+
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+
+  <div class="main">
+    <div class="gallery-container" id="gallery-table">>
+      <iframe src="https://gba.ninja/?autorun=https://evanbowman.github.io/BlindJump.gba"
+              title="W3Schools Free Online Web Tutorials"
+              width="720"
+              height="480">
+      </iframe>
+      <div class="software-description">
+        <p class="desc">Click on the game window to enable keyboard controls. Use the arrow keys to walk. Press and hold X to shoot. Press Z to select/interact. Hold control for quick acces to certain items, or press backspace to open the inventory. Hold shift to view a minimap, once you unlock the map system item. Press enter for more options.</p>
+        <p class="desc">If you have a Gameboy Advance flash cartridge, I would recommend that you play the game on a real device. Web-browser based emulation can only be so accurate.</p>
+      </div>
+    </div>
+  </div>
+
+</html>

@@ -12,13 +12,40 @@ div.gallery {
     width: 300px;
 }
 
+.software-project {
+    width: 720px;
+    margin: 0 auto;
+}
+
+.software-description {
+    text-align: left;
+    width: 920;
+    margin: 0 auto;
+}
+
 @media only screen and (max-width: 700px) {
+    .software-project {
+        width: 360px;
+    }
+
+    .software-description {
+        width: 480;
+    }
+    
     div.gallery {
         width: 300px;
     }
 }
 
 @media only screen and (max-width: 500px) {
+    .software-project {
+        width: 360px;
+    }
+
+    .software-description {
+        width: 460;
+    }
+
     div.gallery {
         width: 300px;
     }
@@ -38,6 +65,17 @@ div.desc {
     text-align: center;
     font-family: "Caslon-Pro";
     color: rgb(35, 35, 35);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+gallery-section-title {
+    text-align: center;
+    width: 100%;
+}
+
+.desc {
+    font-family: "Caslon-Pro";
     font-size: 16px;
     line-height: 1.5;
 }
