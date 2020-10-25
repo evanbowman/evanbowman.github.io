@@ -109,4 +109,5 @@ def compile_thumbnails(directory):
 
 portfolio_dir = "img/portfolio/"
 for folder in os.listdir(portfolio_dir):
-    compile_thumbnails(portfolio_dir + folder + "/")
+    if os.path.isdir(portfolio_dir + folder + "/"):
+        compile_thumbnails(portfolio_dir + folder + "/")

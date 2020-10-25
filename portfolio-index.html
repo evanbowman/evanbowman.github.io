@@ -124,6 +124,7 @@
 
     </div>
 
+    <br>
     <div class="gallery-section-title"><h1>Programs</h1></div>
     <div class="gallery-container">
       <div class="software-project">
@@ -137,7 +138,21 @@
         </div>
       </div>
     </div>
-    
+
+    <br>
+    <div class="gallery-section-title"><h1>Drawings and Intaglio</h1></div>
+    <div class="gallery-container" id="gallery-table2">
+
+      <div class="gallery">
+        <a href="portfolio-index.html">
+          <img src="img/portfolio/2019-2020/thumbs/untitled.png">
+        </a>
+        <div class="desc">Untitled<br>Drypoint, 2020</div>
+      </div>
+
+    </div>
+
+
   </div>
 
   <script>
@@ -145,22 +160,27 @@
     var modalImg = document.getElementById("img01");
     var captionText = document.getElementById("caption");
 
-    var table = document.getElementById("gallery-table");
-    for (var i = 0; i < table.children.length; ++i) {
-        var child = table.children[i];
-        var image = child.children[0].children[0];
-        var desc = child.children[1];
-        var div = document.createElement("DIV");
-        div.appendChild(image);
-        child.replaceChild(div, child.children[0]);
-        (function(image, div, desc) {
-            div.onclick = function() {
-                modal.style.display = "block";
-                modalImg.src = image.src.split("thumbs/").join("").replace(/.png/, ".jpg");
-                captionText.innerHTML = desc.innerHTML;
-            }
-        })(image, div, desc);
+    function fixTable(name) {
+        var table = document.getElementById(name);
+        for (var i = 0; i < table.children.length; ++i) {
+            var child = table.children[i];
+            var image = child.children[0].children[0];
+            var desc = child.children[1];
+            var div = document.createElement("DIV");
+            div.appendChild(image);
+            child.replaceChild(div, child.children[0]);
+            (function(image, div, desc) {
+                div.onclick = function() {
+                    modal.style.display = "block";
+                    modalImg.src = image.src.split("thumbs/").join("").replace(/.png/, ".jpg");
+                    captionText.innerHTML = desc.innerHTML;
+                }
+            })(image, div, desc);
+        }
     }
+
+    fixTable("gallery-table");
+    fixTable("gallery-table2");
 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
