@@ -23,6 +23,11 @@ div.gallery {
     margin: 0 auto;
 }
 
+.image-front {
+    width: 720px;
+    margin: 0 auto;
+}
+
 @media only screen and (max-width: 700px) {
     .software-project {
         width: 360px;
@@ -31,9 +36,14 @@ div.gallery {
     .software-description {
         width: 480;
     }
-    
+
     div.gallery {
         width: 300px;
+    }
+
+    .image-front {
+        width: 100%;
+        height: auto;
     }
 }
 
@@ -48,6 +58,11 @@ div.gallery {
 
     div.gallery {
         width: 300px;
+    }
+
+    .image-front {
+        width: 100%;
+        height: auto;
     }
 }
 
