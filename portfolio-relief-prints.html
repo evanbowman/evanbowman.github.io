@@ -1,0 +1,109 @@
+---
+# empty front matter
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    {% seo %}
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/gallery.css">
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/modal.css">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  </head>
+
+  <div class="navbar-top">
+    <table style="width:100%">
+      <tr>
+        <th class="name-logo">Evan Bowman</th>
+        <th class="link-box">
+          <div class="link-box">
+            <a href="http://www.instagram.com/evanbowman/" class="image-link">
+              <img src="img/instagram-glyph-logo_May2016.png"
+                   width="22" height="22" marginLeft="70px">
+            </a>
+            <a href="https://www.youtube.com/channel/UCvxXrhWVlzmOLsBozbMY1zQ?view_as=subscriber"
+               class="image-link">
+              <img src="img/yt_icon_mono_light.png" width="32" height="22">
+            </a>
+          </div>
+        </th>
+      </tr>
+    </table>
+  </div>
+
+  <div class="navbar">
+    <a class="tab" href="index.html">Notes</a>
+    <a class="selected-tab" href="portfolio-index.html">Portfolio</a>
+    <a class="tab" href="bio.html">Bio</a>
+  </div>
+
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+
+  <div class="main">
+    <div class="gallery-section-title"><h1>Relief Prints</h1></div>
+    <div class="gallery-container" id="gallery-table2">
+
+      <div class="gallery">
+        <a href="portfolio-index.html">
+          <img src="img/portfolio/2019-2020/thumbs/untitled.png">
+        </a>
+        <div class="desc">Untitled<br>Drypoint, 2020</div>
+      </div>
+
+      <div class="gallery">
+        <a href="portfolio-index.html">
+          <img src="img/portfolio/2019-2020/thumbs/acadia_lino.png">
+        </a>
+        <div class="desc">Dorr Mtn. from Cadillac Mtn. (Acadia)<br>Color Linocut, 2020</div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <script>
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+
+    function fixTable(name) {
+        var table = document.getElementById(name);
+        for (var i = 0; i < table.children.length; ++i) {
+            var child = table.children[i];
+            var image = child.children[0].children[0];
+            var desc = child.children[1];
+            var div = document.createElement("DIV");
+            div.appendChild(image);
+            child.replaceChild(div, child.children[0]);
+            (function(image, div, desc) {
+                div.onclick = function() {
+                    modal.style.display = "block";
+                    modalImg.src = image.src.split("thumbs/").join("").replace(/.png/, ".jpg");
+                    captionText.innerHTML = desc.innerHTML;
+                }
+            })(image, div, desc);
+        }
+    }
+
+    fixTable("gallery-table2");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+  </script>
+
+</html>

@@ -49,86 +49,21 @@
   </div>
 
   <div class="main">
+    <div class="gallery-section-title"><h1>Relief Prints</h1></div>
+
+    <div class="software-project">
+      <a href="portfolio-relief-prints.html">
+        <img src="img/portfolio/seascape_moonlight.jpg">
+      </a>
+    </div>
+
+    <br>
     <div class="gallery-section-title"><h1>Paintings</h1></div>
-    <div class="gallery-container" id="gallery-table">
 
-      <div class="gallery">
-        <a href="portfolio-index.html">
-          <img src="img/portfolio/2018-2019/thumbs/still-life-roses-glass.png">
-        </a>
-        <div class="desc">Roses in a glass<br>Oil on panel, 2019</div>
-      </div>
-
-      <div class="gallery">
-        <a href="portfolio-index.html">
-          <img src="img/portfolio/2018-2019/thumbs/wilting-roses.png">
-        </a>
-        <div class="desc">Wilting roses<br>Oil on panel, 2019</div>
-      </div>
-
-      <div class="gallery">
-        <a href="portfolio-index.html">
-          <img src="img/portfolio/2019-2020/thumbs/glass-of-water.png">
-        </a>
-        <div class="desc">Glass of water<br>Oil on panel, 2020</div>
-      </div>
-
-      <div class="gallery">
-        <a href="portfolio-index.html">
-          <img src="img/portfolio/2019-2020/thumbs/carnations.png">
-        </a>
-        <div class="desc">Carnations<br>Oil on panel, 2019</div>
-      </div>
-
-      <div class="gallery">
-        <a href="portfolio-index.html">
-          <img src="img/portfolio/2019-2020/thumbs/self-portrait-straw-hat.png">
-        </a>
-        <div class="desc">Self Portrait with straw hat<br>Oil on panel, 2020</div>
-      </div>
-
-      <div class="gallery">
-        <a href="portfolio-index.html">
-          <img src="img/portfolio/2019-2020/thumbs/profile.png">
-        </a>
-        <div class="desc">Self Portrait in Profile<br>Oil on panel, 2020</div>
-      </div>
-
-      <div class="gallery">
-        <a href="portfolio-index.html">
-          <img src="img/portfolio/2018-2019/thumbs/seascape-by-oahu.png">
-        </a>
-        <div class="desc">Seascape by Oahu<br>Gouache on paper, 2019</div>
-      </div>
-
-      <div class="gallery">
-        <a href="portfolio-index.html">
-          <img src="img/portfolio/2019-2020/thumbs/fading-light-over-cadillac-mountain.png">
-        </a>
-        <div class="desc">Fading light over Cadillac Mountain<br>Gouache on paper, 2020</div>
-      </div>
-
-      <div class="gallery">
-        <a href="portfolio-index.html">
-          <img src="img/portfolio/2019-2020/thumbs/halibut-point.png">
-        </a>
-        <div class="desc">Impression, Halibut Point in gray weather<br>Gouache on paper, 2020</div>
-      </div>
-
-      <div class="gallery">
-        <a href="portfolio-index.html">
-          <img src="img/portfolio/2019-2020/thumbs/self-portrait.png">
-        </a>
-        <div class="desc">Self Portrait<br>Oil on panel, 2020</div>
-      </div>
-
-      <div class="gallery">
-        <a href="portfolio-index.html">
-          <img src="img/portfolio/2019-2020/thumbs/self-portrait-closeup.png">
-        </a>
-        <div class="desc">Self Portrait (closeup)<br>Oil on panel, 2020</div>
-      </div>
-
+    <div class="software-project">
+      <a href="portfolio-paintings.html">
+        <img src="img/portfolio/still_life.jpg">
+      </a>
     </div>
 
     <br>
@@ -161,63 +96,6 @@
       </div>
     </div>
 
-    <br>
-    <div class="gallery-section-title"><h1>Printmaking</h1></div>
-    <div class="gallery-container" id="gallery-table2">
-
-      <div class="gallery">
-        <a href="portfolio-index.html">
-          <img src="img/portfolio/2019-2020/thumbs/untitled.png">
-        </a>
-        <div class="desc">Untitled<br>Drypoint, 2020</div>
-      </div>
-
-      <div class="gallery">
-        <a href="portfolio-index.html">
-          <img src="img/portfolio/2019-2020/thumbs/acadia_lino.png">
-        </a>
-        <div class="desc">Dorr Mtn. from Cadillac Mtn. (Acadia)<br>Color Linocut, 2020</div>
-      </div>
-
-    </div>
-
-
   </div>
-
-  <script>
-    var modal = document.getElementById("myModal");
-    var modalImg = document.getElementById("img01");
-    var captionText = document.getElementById("caption");
-
-    function fixTable(name) {
-        var table = document.getElementById(name);
-        for (var i = 0; i < table.children.length; ++i) {
-            var child = table.children[i];
-            var image = child.children[0].children[0];
-            var desc = child.children[1];
-            var div = document.createElement("DIV");
-            div.appendChild(image);
-            child.replaceChild(div, child.children[0]);
-            (function(image, div, desc) {
-                div.onclick = function() {
-                    modal.style.display = "block";
-                    modalImg.src = image.src.split("thumbs/").join("").replace(/.png/, ".jpg");
-                    captionText.innerHTML = desc.innerHTML;
-                }
-            })(image, div, desc);
-        }
-    }
-
-    fixTable("gallery-table");
-    fixTable("gallery-table2");
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-  </script>
 
 </html>
