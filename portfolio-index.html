@@ -96,6 +96,183 @@
       </div>
     </div>
 
-  </div>
+    <br>
+    <div class="gallery-section-title"><h1>LISP</h1></div>
+    <div class="gallery-container">
+      <script src="LISP.js"></script>
+      <script language="JavaScript" type="text/javascript" src="termlib.js"></script>
+      <script>
+        Module.onRuntimeInitialized = function() {
+            Module._init();
+            termOpen();
+        }
 
+        var term;
+
+        function termOpen() {
+	    if ((!term) || (term.closed)) {
+	        term = new Terminal(
+		    {
+		        termDiv: 'termDiv',
+		        bgColor: '#232e45',
+		        initHandler: termInitHandler,
+		        handler: termHandler,
+		        exitHandler: termExitHandler
+		    }
+	        );
+	        term.open();
+	    }
+        }
+
+        function termExitHandler() {
+
+        }
+
+        var termparsed = "";
+
+        function termInitHandler() {
+	    // output a start up screen
+	    this.write(
+	        [
+		    '%c(@yellowgreen)                  ~~~~           SKYLAND LISP            ~~~~',
+		    '                  ~~~~   type (env) to view variables    ~~~~',
+		    '%c()%n'
+	        ]
+	    );
+	    // and leave with prompt
+	    this.prompt();
+
+            termprint = this.type;
+        }
+
+        function termHandler() {
+	    // default handler + exit
+	    this.newLine();
+
+            if (this.lineBuffer != '') {
+	        // this.type('You typed: '+this.lineBuffer);
+
+                mem = allocate(intArrayFromString(this.lineBuffer), 'i8', ALLOC_NORMAL);
+                Module._parseline(mem);
+                _free(mem);
+
+                this.type(termparsed);
+                termparsed = "";
+
+	        this.newLine();
+	    }
+
+	    this.prompt();
+        }
+
+
+      </script>
+
+
+      <style type="text/css">
+
+        .term {
+	    font-family: "Courier New",courier,fixed,monospace;
+	    font-size: 16px;
+	    color: #94aad6;
+	    background: none;
+	    letter-spacing: 1px;
+        }
+        .term .termReverse {
+	    color: #232e45;
+	    background: #95a9d5;
+        }
+
+        table.inventory td {
+	    padding-bottom: 20px !important;
+        }
+
+        tt,pre {
+	    font-family: courier,fixed,monospace;
+	    color: #ccffaa;
+	    font-size: 12px;
+	    line-height: 15px;
+        }
+
+        .markup { color: #00ffcc; }
+
+        .dimmed,.dimmed *,.dimmed * * {
+	    background-color: #222222 !important;
+	    color: #333333 !important;
+        }
+
+        @media print {
+	    body { background-color: #ffffff; }
+	    body,p,td,li,tt {
+	        color: #000000;
+	    }
+	    pre,.prop,.markup {
+	        color: #000000;
+	    }
+	    h1 {
+	        color: #000000;
+	    }
+	    table.inventory {
+	        display: none;
+	    }
+        }
+
+        .center {
+            margin-left: auto !important;
+            margin-right: auto !important;
+            display: block;
+        }
+
+        .flex-container {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        row {
+            width: 100%;
+        }
+        .flex-item {
+            text-align: center;
+        }
+
+      </style>
+
+
+      <div class="flex-container">
+        <div class="row">
+          <div id="termDiv"
+               class="flex-item"
+               style="visibility: hidden; z-index:1;"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="software-description">
+      <p class="desc">
+        Both SKYLAND and BlindJump, above, feature an embedded lisp
+        interpreter. The Gameboy Advance hardware limits the fuctionality of the
+        interpreter significantly; this LISP dialect does not include several
+        notable features that one might expect from a LISP implementation, such
+        as functional closures. A LISP-1, like Scheme, so functions and
+        variables inhabit the same namespace. Like Emacs LISP, our interpreter
+        uses dynamic variable scope.
+      </p>
+      <p class="desc">
+        Note that this standalone version of the interpreter includes only the
+        LISP language and standard library, it does not include any of the
+        script hooks into the SKYLAND or Blind Jump engines. While not
+        practically useful, you may find the web-based interpreter to be fun to
+        play around with nonetheless.
+      </p>
+      <p class="desc">
+        Both SKYLAND and Blind Jump serve a LISP REPL via UART from the Link
+        Cable port, so on a physical console, you can plug the gba into a laptop
+        with a 3.3v RS232 cable, and send commands.
+      </p>
+    </div>
+
+  </div>
 </html>
