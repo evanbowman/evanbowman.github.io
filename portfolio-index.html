@@ -49,7 +49,12 @@
   </div>
 
   <div class="main">
-    <div class="gallery-section-title"><h1>Relief Prints</h1></div>
+    <span class="gallery-section-title">
+      <h1 id="relief-prints">
+        Relief Prints
+        <!-- <a href="#relief-prints">&</a> -->
+      </h1>
+    </span>
 
     <div class="gallery-container">
       <a href="portfolio-relief-prints.html">
@@ -60,7 +65,12 @@
     </div>
 
     <br>
-    <div class="gallery-section-title"><h1>Paintings</h1></div>
+    <div class="gallery-section-title">
+      <h1 id="paintings">
+        Paintings
+        <!-- <a class="title-link" href="#paintings">&</a> -->
+      </h1>
+    </div>
 
     <div class="gallery-container">
       <a href="portfolio-paintings.html">
@@ -71,7 +81,12 @@
     </div>
 
     <br>
-    <div class="gallery-section-title"><h1>SKYLAND (2021)</h1></div>
+    <div class="gallery-section-title">
+      <h1 id="skyland">
+        SKYLAND (2021)
+        <!-- <a href="#skyland">&</a> -->
+      </h1>
+    </div>
     <div class="gallery-container">
       <a href="portfolio-skyland.html">
         <img class="image-front" src="img/portfolio/skyland-screenshot.png">
@@ -86,7 +101,12 @@
     </div>
 
     <br>
-    <div class="gallery-section-title"><h1>Blind Jump (2020)</h1></div>
+    <div class="gallery-section-title">
+      <h1 id="blind-jump">
+        Blind Jump (2020)
+        <!-- <a href="#blind-jump">&</a> -->
+      </h1>
+    </div>
     <div class="gallery-container">
       <a href="portfolio-blindjump.html">
         <img class="image-front" src="img/portfolio/blindjump-screenshot.png">
@@ -101,7 +121,12 @@
     </div>
 
     <br>
-    <div class="gallery-section-title"><h1>LISP</h1></div>
+    <div class="gallery-section-title">
+      <h1 id="lisp">
+        LISP
+        <a href="#lisp">&</a>
+      </h1>
+    </div>
     <div class="gallery-container">
       <script src="LISP.js"></script>
       <script language="JavaScript" type="text/javascript" src="termlib.js"></script>
@@ -117,7 +142,7 @@
 	    if ((!term) || (term.closed)) {
 	        term = new Terminal(
 		    {
-                        rows: 28,
+                        rows: 32,
 		        termDiv: 'termDiv',
 		        bgColor: '#232e45',
 		        initHandler: termInitHandler,
@@ -134,6 +159,7 @@
         }
 
         var termparsed = "";
+        var term = null;
 
         function termInitHandler() {
 	    // output a start up screen
@@ -153,6 +179,7 @@
         function termHandler() {
 	    // default handler + exit
 	    this.newLine();
+            term = this;
 
             if (this.lineBuffer != '') {
 	        // this.type('You typed: '+this.lineBuffer);
@@ -178,7 +205,7 @@
 
         .term {
 	    font-family: "Courier New",courier,fixed,monospace;
-	    font-size: 16px;
+	    font-size: 14px;
 	    color: #94aad6;
 	    background: none;
 	    letter-spacing: 1px;
@@ -258,26 +285,10 @@
     <div class="software-description">
       <p class="desc">
         Both SKYLAND and BlindJump, above, feature an embedded lisp
-        interpreter. The Gameboy Advance hardware limits the fuctionality of the
-        interpreter significantly; this LISP dialect does not include several
-        notable features that one might expect from a LISP implementation, such
-        as functional closures. A LISP-1, like Scheme, so functions and
-        variables inhabit the same namespace. Like Emacs LISP, our interpreter
-        uses dynamic variable scope.
-      </p>
-      <p class="desc">
-        Note that this standalone version of the interpreter includes only the
-        LISP language and standard library, it does not include any of the
-        script hooks into the SKYLAND or Blind Jump engines. While not
-        practically useful, you may find the web-based interpreter to be fun to
-        play around with nonetheless.
-      </p>
-      <p class="desc">
-        Both SKYLAND and Blind Jump serve a LISP REPL via UART from the Link
-        Cable port, so on a physical console, you can plug the gba into a laptop
-        with a 3.3v RS232 cable, and send commands.
+        interpreter. See <a href="https://github.com/evanbowman/blind-jump-portable/tree/francias#lisp">here</a> for documentation about the language dialect. 
       </p>
     </div>
+    <br>
 
   </div>
 </html>
