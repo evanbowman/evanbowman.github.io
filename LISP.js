@@ -1228,10 +1228,10 @@ function updateGlobalBufferAndViews(buf) {
 }
 
 var STATIC_BASE = 1024,
-    STACK_BASE = 5701184,
+    STACK_BASE = 5701280,
     STACKTOP = STACK_BASE,
-    STACK_MAX = 458304,
-    DYNAMIC_BASE = 5701184;
+    STACK_MAX = 458400,
+    DYNAMIC_BASE = 5701280;
 
 assert(STACK_BASE % 16 === 0, 'stack must start aligned');
 assert(DYNAMIC_BASE % 16 === 0, 'heap must start aligned');
@@ -1739,15 +1739,15 @@ var tempI64;
 // === Body ===
 
 var ASM_CONSTS = {
-  3985: function() {term.type(termparsed); termparsed = ""; term.newLine()},  
- 4088: function($0) {termparsed = termparsed + UTF8ToString($0);},  
- 4180: function($0, $1) {lines = UTF8ToString($0).split(UTF8ToString($1)); lines.forEach(function(line, index) { term.type(line); term.newLine(); });}
+  4069: function() {term.type(termparsed); termparsed = ""; term.newLine()},  
+ 4176: function($0) {termparsed = termparsed + UTF8ToString($0);},  
+ 4268: function($0, $1) {lines = UTF8ToString($0).split(UTF8ToString($1)); lines.forEach(function(line, index) { term.type(line); term.newLine(); });}
 };
 
 
 
 
-// STATICTOP = STATIC_BASE + 457280;
+// STATICTOP = STATIC_BASE + 457376;
 /* global initializers */  __ATINIT__.push({ func: function() { ___wasm_call_ctors() } });
 
 
