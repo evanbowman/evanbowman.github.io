@@ -81,7 +81,7 @@ def make_topic_feed(topic):
         blog_page += 1
 
     if not topic:
-        os.system("mv blog_page_%s.html index.html" % (blog_page - 1))
+        os.system("mv blog_page_%s.html notes.html" % (blog_page - 1))
 
 
 
