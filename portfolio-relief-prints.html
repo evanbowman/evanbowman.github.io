@@ -9,10 +9,6 @@
           type="text/css"
           href="css/gallery.css">
 
-    <link rel="stylesheet"
-          type="text/css"
-          href="css/modal.css">
-
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
   </head>
 
@@ -40,12 +36,6 @@
     <a class="selected-tab" href="index.html">Portfolio</a>
     <a class="tab" href="notes.html">Notes</a>
     <a class="tab" href="bio.html">Bio</a>
-  </div>
-
-  <div id="myModal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="img01">
-    <div id="caption"></div>
   </div>
 
   <div class="main">
@@ -111,10 +101,6 @@
   </div>
 
   <script>
-    var modal = document.getElementById("myModal");
-    var modalImg = document.getElementById("img01");
-    var captionText = document.getElementById("caption");
-
     function fixTable(name) {
         var table = document.getElementById(name);
         for (var i = 0; i < table.children.length; ++i) {
@@ -126,9 +112,7 @@
             child.replaceChild(div, child.children[0]);
             (function(image, div, desc) {
                 div.onclick = function() {
-                    modal.style.display = "block";
-                    modalImg.src = image.src.split("thumbs/").join("").replace(/.png/, ".jpg");
-                    captionText.innerHTML = desc.innerHTML;
+                    window.location = image.src.split("thumbs/").join("").replace(/.png/, ".jpg");
                 }
             })(image, div, desc);
         }
