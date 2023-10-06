@@ -10,12 +10,106 @@
           href="css/gallery.css">
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <style>
+      * {
+          box-sizing: border-box;
+      }
+
+      body {
+          margin: 0;
+          font-family: Arial;
+      }
+
+      .header {
+          text-align: center;
+          padding: 32px;
+      }
+
+      .gallery-row {
+          display: -ms-flexbox; /* IE10 */
+          display: flex;
+          -ms-flex-wrap: wrap; /* IE10 */
+          flex-wrap: wrap;
+          padding: 0 4px;
+      }
+
+      /* Create four equal columns that sits next to each other */
+      .gallery-column {
+          -ms-flex: 25%; /* IE10 */
+          flex: 25%;
+          max-width: 25%;
+          padding: 0 4px;
+      }
+
+      .gallery-column img {
+          margin-top: 8px;
+          vertical-align: middle;
+          width: 100%;
+      }
+
+      /* Responsive layout - makes a two column-layout instead of four columns */
+      @media screen and (max-width: 1000px) {
+          .gallery-column {
+              -ms-flex: 50%;
+              flex: 50%;
+              max-width: 50%;
+          }
+      }
+
+      /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+          .gallery-column {
+              -ms-flex: 100%;
+              flex: 100%;
+              max-width: 100%;
+          }
+      }
+    </style>
+    
   </head>
 
   <div class="navbar">
     <a class="selected-tab" href="index.html">Portfolio</a>
     <a class="tab" href="bio.html">Bio</a>
   </div>
+
+  <body>
+    <div class="gallery-row">
+      <div class="gallery-column">
+        <a href="img/portfolio/2019-2020/seascape_in_moonlight.jpg">
+          <img src="img/portfolio/2019-2020/thumbs/seascape_in_moonlight.jpg" style="width:100%">
+        </a>
+        <a href="img/portfolio/2019-2020/self_portrait_with_straw_hat.jpg">
+          <img src="img/portfolio/2019-2020/thumbs/self_portrait_with_straw_hat.jpg" style="width:100%">
+        </a>
+      </div>
+      
+      <div class="gallery-column">
+        <a href="img/portfolio/2019-2020/acadia_lino.jpg">
+          <img src="img/portfolio/2019-2020/thumbs/acadia_lino.jpg" style="width:100%">
+        </a>
+        <a href="img/portfolio/2019-2020/self_portrait_aquatint.jpg">
+          <img src="img/portfolio/2019-2020/thumbs/self_portrait_aquatint.jpg" style="width:100%">
+        </a>
+      </div>
+      
+      <div class="gallery-column">
+        <a href="img/portfolio/2019-2020/nocturne_with_figure.jpg">
+          <img src="img/portfolio/2019-2020/thumbs/nocturne_with_figure.jpg" style="width:100%">
+        </a>
+        <a href="img/portfolio/2019-2020/moon-study.jpg">
+          <img src="img/portfolio/2019-2020/thumbs/moon-study.jpg" style="width:100%">
+        </a>
+      </div>
+      
+      <div class="gallery-column">
+        <a href="img/portfolio/2019-2020/yellow_roses.jpg">
+          <img src="img/portfolio/2019-2020/thumbs/yellow_roses.jpg" style="width:100%">
+        </a>
+      </div>
+    </div>
+  </body>
 
   <div class="main">
     <div class="gallery-section-title"><h1>Relief Prints</h1></div>

@@ -9,11 +9,68 @@
           type="text/css"
           href="css/gallery.css">
 
-    <link rel="stylesheet"
-          type="text/css"
-          href="css/modal.css">
+    <!-- <link rel="stylesheet" -->
+    <!--       type="text/css" -->
+    <!--       href="css/modal.css"> -->
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <style>
+      * {
+          box-sizing: border-box;
+      }
+
+      body {
+          margin: 0;
+          font-family: Arial;
+      }
+
+      .header {
+          text-align: center;
+          padding: 32px;
+      }
+
+      .gallery-row {
+          display: -ms-flexbox; /* IE10 */
+          display: flex;
+          -ms-flex-wrap: wrap; /* IE10 */
+          flex-wrap: wrap;
+          padding: 0 4px;
+      }
+
+      /* Create four equal columns that sits next to each other */
+      .gallery-column {
+          -ms-flex: 25%; /* IE10 */
+          flex: 25%;
+          max-width: 25%;
+          padding: 0 4px;
+      }
+
+      .gallery-column img {
+          margin-top: 8px;
+          vertical-align: middle;
+          width: 100%;
+      }
+
+      /* Responsive layout - makes a two column-layout instead of four columns */
+      @media screen and (max-width: 1000px) {
+          .gallery-column {
+              -ms-flex: 50%;
+              flex: 50%;
+              max-width: 50%;
+          }
+      }
+
+      /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+          .gallery-column {
+              -ms-flex: 100%;
+              flex: 100%;
+              max-width: 100%;
+          }
+      }
+    </style>
+
   </head>
 
   <div class="navbar">
@@ -21,172 +78,71 @@
     <a class="tab" href="bio.html">Bio</a>
   </div>
 
-  <div class="main">
-    <div class="gallery-section-title"><h1>Paintings</h1></div>
-    <div class="gallery-container" id="gallery-table">
-
-      <div class="gallery">
-        <a href="index.html">
-          <img src="img/portfolio/2019-2020/thumbs/still_life_in_white.png">
+  <body>
+    <div class="gallery-row">
+      <div class="gallery-column">
+        <a href="img/portfolio/2019-2020/still_life_in_white.jpg">
+          <img src="img/portfolio/2019-2020/thumbs/still_life_in_white.jpg" style="width:100%">
         </a>
-        <div class="desc">Untitled<br>Oil on panel, 2020</div>
-      </div>
-
-      <div class="gallery">
-        <a href="index.html">
-          <img src="img/portfolio/2019-2020/thumbs/still_life_silver_pot.png">
+        <a href="img/portfolio/2019-2020/still_life_with_lemon.jpg">
+          <img src="img/portfolio/2019-2020/thumbs/still_life_with_lemon.jpg" style="width:100%">
         </a>
-        <div class="desc">Still life with silver pot<br>Oil on panel, 2021</div>
-      </div>
-
-      <div class="gallery">
-        <a href="index.html">
-          <img src="img/portfolio/2018-2019/thumbs/still-life-roses-glass.png">
+        <a href="img/portfolio/2019-2020/halibut-point.jpg">
+          <img src="img/portfolio/2019-2020/thumbs/halibut-point.jpg" style="width:100%">
         </a>
-        <div class="desc">Sill life with roses<br>Oil on panel, 2019</div>
-      </div>
-
-      <!-- <div class="gallery"> -->
-      <!--   <a href="index.html"> -->
-      <!--     <img src="img/portfolio/2018-2019/thumbs/wilting-roses.png"> -->
-      <!--   </a> -->
-      <!--   <div class="desc">Wilting roses<br>Oil on panel, 2019</div> -->
-      <!-- </div> -->
-
-      <div class="gallery">
-        <a href="index.html">
-          <img src="img/portfolio/2019-2020/thumbs/glass-of-water.png">
+        <a href="img/portfolio/2019-2020/sketchbook_pages.jpg">
+          <img src="img/portfolio/2019-2020/thumbs/sketchbook_pages.jpg" style="width:100%">
         </a>
-        <div class="desc">Glass of water<br>Oil on panel, 2020</div>
+
       </div>
-
-
-      <div class="gallery">
-        <a href="index.html">
-          <img src="img/portfolio/2019-2020/thumbs/still_life_with_lemon.png">
+      <div class="gallery-column">
+        <a href="img/portfolio/2019-2020/still_life_silver_pot.jpg">
+          <img src="img/portfolio/2019-2020/thumbs/still_life_silver_pot.jpg" style="width:100%">
         </a>
-        <div class="desc">Still life with lemon<br>Oil on panel, 2022</div>
-      </div>
-
-
-      <!-- <div class="gallery"> -->
-      <!--   <a href="index.html"> -->
-      <!--     <img src="img/portfolio/2019-2020/thumbs/carnations.png"> -->
-      <!--   </a> -->
-      <!--   <div class="desc">Carnations<br>Oil on panel, 2019</div> -->
-      <!-- </div> -->
-
-
-      <div class="gallery">
-        <a href="index.html">
-          <img src="img/portfolio/2019-2020/thumbs/Nancy's_roses.png">
+        <a href="img/portfolio/2019-2020/Nancy's_roses.jpg">
+          <img src="img/portfolio/2019-2020/thumbs/Nancy's_roses.jpg" style="width:100%">
         </a>
-        <div class="desc">Nancy's roses<br>Gouache on paper, 2021</div>
-      </div>
-
-
-      <div class="gallery">
-        <a href="index.html">
-          <img src="img/portfolio/2019-2020/thumbs/palms_oahu_3.png">
+        <a href="img/portfolio/2019-2020/alhambra.jpg">
+          <img src="img/portfolio/2019-2020/thumbs/alhambra.jpg" style="width:100%">
         </a>
-        <div class="desc">Palms no.3, Oahu<br>Gouache on paper, 2023</div>
-      </div>
-
-      <div class="gallery">
-        <a href="index.html">
-          <img src="img/portfolio/2019-2020/thumbs/fading-light-over-cadillac-mountain.png">
+        <a href="img/portfolio/2019-2020/self_portrait_age_27.jpg">
+          <img src="img/portfolio/2019-2020/thumbs/self_portrait_age_27.jpg" style="width:100%">
         </a>
-        <div class="desc">Fading light over Cadillac Mountain<br>Gouache on paper, 2020</div>
-      </div>
 
-      <div class="gallery">
-        <a href="index.html">
-          <img src="img/portfolio/2019-2020/thumbs/halibut-point.png">
+      </div>
+      <div class="gallery-column">
+        <a href="img/portfolio/2018-2019/still-life-roses-glass.jpg">
+          <img src="img/portfolio/2018-2019/thumbs/still-life-roses-glass.jpg" style="width:100%">
         </a>
-        <div class="desc">Impression, Halibut Point in gray weather<br>Gouache on paper, 2020</div>
-      </div>
-
-      <div class="gallery">
-        <a href="index.html">
-          <img src="img/portfolio/2019-2020/thumbs/alhambra.png">
+        <a href="img/portfolio/2019-2020/palms_oahu_3.jpg">
+          <img src="img/portfolio/2019-2020/thumbs/palms_oahu_3.jpg" style="width:100%">
         </a>
-        <div class="desc">Study of Alhambra palace complex, overcast<br>Gouache on paper, 2022</div>
-      </div>
-
-      <div class="gallery">
-        <a href="index.html">
-          <img src="img/portfolio/2019-2020/thumbs/sierra_nevada.png">
+        <a href="img/portfolio/2019-2020/sierra_nevada.jpg">
+          <img src="img/portfolio/2019-2020/thumbs/sierra_nevada.jpg" style="width:100%">
         </a>
-        <div class="desc">Sierra Nevada (Granada)<br>Gouache on paper, 2022</div>
-      </div>
-
-      <div class="gallery">
-        <a href="index.html">
-          <img src="img/portfolio/2019-2020/thumbs/wild_apples_maine_coast.png">
+        <a href="img/portfolio/2019-2020/carnations.jpg">
+          <img src="img/portfolio/2019-2020/thumbs/carnations.jpg" style="width:100%">
         </a>
-        <div class="desc">Wild apples, Maine coast<br>Gouache on paper, 2020</div>
-      </div>
 
-      <div class="gallery">
-        <a href="index.html">
-          <img src="img/portfolio/2019-2020/thumbs/sketchbook_pages.png">
+      </div>
+      <div class="gallery-column">
+        <a href="img/portfolio/2019-2020/glass-of-water.jpg">
+          <img src="img/portfolio/2019-2020/thumbs/glass-of-water.jpg" style="width:100%">
         </a>
-        <div class="desc">Excerpts from landscape sketchbook<br>Gouache on paper, 2022</div>
-      </div>
-
-      <div class="gallery">
-        <a href="index.html">
-          <img src="img/portfolio/2019-2020/thumbs/self_portrait_age_27.png">
+        <a href="img/portfolio/2019-2020/fading-light-over-cadillac-mountain.jpg">
+          <img src="img/portfolio/2019-2020/thumbs/fading-light-over-cadillac-mountain.jpg" style="width:100%">
         </a>
-        <div class="desc">Self Portrait age 27<br>Oil on panel, 2023</div>
-      </div>
-
-      <div class="gallery">
-        <a href="index.html">
-          <img src="img/portfolio/2019-2020/thumbs/self-portrait-closeup.png">
+        <a href="img/portfolio/2019-2020/wild_apples_maine_coast.jpg">
+          <img src="img/portfolio/2019-2020/thumbs/wild_apples_maine_coast.jpg" style="width:100%">
         </a>
-        <div class="desc">Self Portrait (closeup)<br>Oil on panel, 2020</div>
-      </div>
-
-      <div class="gallery">
-        <a href="index.html">
-          <img src="img/portfolio/2019-2020/thumbs/profile.png">
+        <a href="img/portfolio/2019-2020/profile.jpg">
+          <img src="img/portfolio/2019-2020/thumbs/profile.jpg" style="width:100%">
         </a>
-        <div class="desc">Self Portrait in Profile<br>Oil on panel, 2020</div>
-      </div>
 
+      </div>
     </div>
-
-  </div>
-
-  <script>
-    function fixTable(name) {
-        var table = document.getElementById(name);
-        for (var i = 0; i < table.children.length; ++i) {
-            var child = table.children[i];
-            var image = child.children[0].children[0];
-            var desc = child.children[1];
-            var div = document.createElement("DIV");
-            div.appendChild(image);
-            child.replaceChild(div, child.children[0]);
-            (function(image, div, desc) {
-                div.onclick = function() {
-                    window.location = image.src.split("thumbs/").join("").replace(/.png/, ".jpg");
-                }
-            })(image, div, desc);
-        }
-    }
-
-    fixTable("gallery-table");
-    fixTable("gallery-table2");
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-  </script>
+    <br>
+    <br>
+  </body>
 
 </html>

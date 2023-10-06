@@ -94,14 +94,17 @@ def compile_thumbnails(directory):
     for name in os.listdir(directory):
 
         full_path = directory + name
-        thumb_name = directory + "thumbs/" + name.split('.')[0] + ".png"
+        thumb_name = directory + "thumbs/" + name.split('.')[0] + ".jpg"
 
         if os.path.isfile(full_path) and not os.path.exists(thumb_name):
             print("[COMPILE THUMBNAIL]: " + full_path)
             img = Image.open(directory + name)
             aspect = float(img.size[1]) / img.size[0]
 
-            new_img = img.resize((400, int(400 * aspect)), Image.ANTIALIAS)
+            if img.size[0] > 700 or img.size[1] > 700:
+                new_img = img.resize((700, int(700 * aspect)), Image.ANTIALIAS)
+            else:
+                new_img = img
 
             new_img.save(thumb_name)
 
