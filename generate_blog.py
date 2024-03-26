@@ -102,7 +102,7 @@ def compile_thumbnails(directory):
             aspect = float(img.size[1]) / img.size[0]
 
             if img.size[0] > 700 or img.size[1] > 700:
-                new_img = img.resize((700, int(700 * aspect)), Image.ANTIALIAS)
+                new_img = img.resize((700, int(700 * aspect)), Image.LANCZOS)
             else:
                 new_img = img
 
