@@ -5,7 +5,9 @@
 }
 
 
-
+.index-heading {
+    font-family: "Helvetica" !important;
+}
 
 
 div.gallery {
@@ -88,9 +90,9 @@ div.desc {
     line-height: 1.5;
 }
 
-gallery-section-title {
+.gallery-section-title {
     text-align: center;
-    font-family: "Caslon-Pro";
+    font-family: "Helvetica";
     width: 100%;
 }
 
