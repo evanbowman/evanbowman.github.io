@@ -5,6 +5,11 @@ body {
 }
 
 
+.heading-link {
+     font-family: "Helvetica" !important;
+}
+
+
 /* The navigation bar */
 .navbar {
     overflow: hidden;
