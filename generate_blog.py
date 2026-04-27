@@ -1,6 +1,6 @@
 
 import os
-import htmlmin
+#import htmlmin
 from PIL import Image
 
 #
@@ -25,9 +25,9 @@ def load_template():
         template = file_contents("blog-page-template-header.html")
         template = template.replace("<DESCRIPTION>", description)
         template = template.replace("<PAGE_NAME>", "http://evanbowman.github.io/" + page_name)
-        return htmlmin.minify(template)
+        return template #htmlmin.minify(template)
 
-    footer = htmlmin.minify(file_contents("blog-page-template-footer.html"))
+    footer = file_contents("blog-page-template-footer.html") #htmlmin.minify(file_contents("blog-page-template-footer.html"))
 
     return header, footer
 
@@ -85,7 +85,7 @@ def make_topic_feed(topic):
 
 
 
-make_topic_feed(None)
+# make_topic_feed(None)
 
 
 
