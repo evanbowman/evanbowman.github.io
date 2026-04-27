@@ -1,0 +1,219 @@
+
+<html>
+  <head>
+    <style>
+      .heading-link {
+          font-family: "Helvetica" !important;
+          display: inline;
+          padding-right: 30px;
+      }
+      .log-heading {
+          font-family: "Helvetica" !important;
+      }
+      p {
+          font-family: "Helvetica" !important;
+      }
+      body {
+          margin: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <a href="index.html"><h1 class="heading-link">home</h1></a>
+    <a href="log.html"><h1 class="heading-link">posts</h1></a>
+    <br>
+    <br>
+    <br>
+
+    <div class="log-heading">
+      <h1>2026</h1>
+    </div>
+    <div class="log-heading">
+      <h2>April</h2>
+    </div>
+    <div class="log-heading">
+      <h3>The Skyland LISP Modding System</h3>
+    </div>
+    <p>
+      <a href="https://evanbowman.itch.io/skyland">Skyland</a>, one of my
+      long-standing Gameboy Advance homebrew projects, has a fairly extensive
+      modding system, requiring only a copy of the game's ROM file and
+      downloading a script! I'd like to demonstrate the process of modding the
+      game by showing how to extract scripts from the rom, edit one of them, and
+      rebuild the game. Let's start by picking a level scenario: I've chosen a
+      simple one where the player encounters an angry pirate character called
+      Redbeard!
+    </p>
+    <p>
+      Once the opening level dialog finishes, the game presents you with a few
+      choices:
+    </p>
+    <img src="img/blog/redbeard_choice.png"></img>
+    <p>
+      When you choose the option accusing Redbeard of bluffing, he angrily fires
+      a broadside off of your bow:
+    </p>
+    <img src="img/blog/redbeard_bluff.gif"></img>
+    
+    <p>
+      Suppose we wanted to change what the game does when you accuse Redbeard of
+      lying, where would we start? You <i>could</i> download the entire source
+      code and set up a C++ cross compiler, but actually, for editing scripts,
+      all you need is a copy of the game's ROM file and this
+      <a href="unpack_rom.py">unpack_rom.py</a> script! This setup allows
+      you to modify the game on any computer with an installation of python, no
+      other tools needed! Place your copy of the game and the unpacking script
+      in the same directory:
+    </p>
+    <pre><code>
+ modding % ls
+Skyland.gba	unpack_rom.py</code></pre>
+    <p>
+      Next, you'll need to run the unpacking script. You can run it with the
+      python command:
+    </p>
+    <code>
+ modding % python3 unpack_rom.py
+    </code>
+    <p>
+      If you inspect the current directory after running the script, you should
+      see quite a few files. The unpack_rom.py script has extracted the engine
+      code into SkylandEngine.gba, and unpacked all of the other resource files
+      into various directories. The scripts/ folder contains all of the level
+      scenarios, so we'll want to start there.
+    </p>
+    <pre><code>
+ modding % ls
+boot.ini		lisp_symtab.dat		SkylandEngine.gba
+fs_hash.dat		packages		strings
+fs.extracted.bin	readme.txt		tools
+help			repack.sh		unpack_rom.py
+licenses		<b>scripts</b>
+lisp_constant_tab.dat	Skyland.gba
+    </pre>
+    <p>
+      You can find any of the scripts by searching the game's dialog in the
+      scripts/ directory:
+    </p>
+    <pre><code>
+ modding % grep -r "You're bluffing" scripts
+scripts/event/neutral/0/1_0.lisp:                                          "You're bluffing!"
+scripts/event/neutral/0/1_0.lisp:                                          "You're bluffing!"</code></pre>
+    <p>
+      Huh, looks like the game's scripts are all written in LISP :)
+    </p>
+    <p>
+      This isn't a config language or a stripped-down DSL; it's a real LISP
+      dialect with a full numerical tower, support for async programming, and an
+      optimizing bytecode compiler! Later in this post, I'll show the onscreen
+      debugger!
+    </p>
+    <p>
+      When opening scripts/event/neutral/0/1_0.lisp, we see a function called
+      handle-bluff, which implements Redbeard's reaction when accused of being
+      deceitful.
+    </p>
+    <pre><code>
+(<b>defn/temp</b> handle-bluff ()
+  ;; You accused redbeard of bluffing. He fires a broadside off your bow.
+  ;; He fires three projectiles, with pauses in between.
+  (sleep 400)
+  (emit (opponent) 0 12 (terrain (player)) 0)
+  (sleep 200)
+  (emit (opponent) 0 13 (terrain (player)) 0)
+  (sleep 200)
+  (emit (opponent) 0 14 (terrain (player)) 0)
+  (sleep 1200)
+  ;; Set up a dialog prompt, and await user input:
+  (let ((sel (<b>await</b> (dialog-choice* (tr (s+ "<c:Redbeard:12>Yaargh!! I'm just a simple marauder, "
+                                            "trying to earn a decent living here! "
+                                            "[via petty extortion, how else?] <B:0> "
+                                            "So what's it gonna be? Last chance..."))
+                                    (tr '("Pay 600@."
+                                          "Fight back."))))))
+    (<b>case</b> sel
+      (0 (on-dialog-accepted))
+      (1 (on-dialog-declined)))))</code></pre>
+    <p>
+      Some things here warrant some explanation. <code>defn/temp</code> is a
+      macro that declares a temporary function, to be cleaned up at the end of
+      the current level. The <code>await</code> keyword waits on a promise, many
+      functions accepting input from the player will return a promise, allowing
+      scripts to suspend execution and resume later. The <code>tr</code>
+      function translates text, but also doubles as a tag used by the
+      localization system when extracting strings from the game's scripts.
+    </p>
+    <p>
+      Let's edit the script to fire way more projectiles. Maybe something like
+      this:
+    </p>
+    <pre><code>
+(<b>defn/temp</b> handle-bluff ()
+  ;; Opening salvo, same as before
+  (sleep 400)
+  (emit (opponent) 0 12 (terrain (player)) 0)
+  (sleep 200)
+  (emit (opponent) 0 13 (terrain (player)) 0)
+  (sleep 200)
+  (emit (opponent) 0 14 (terrain (player)) 0)
+  ;; A long pause. The player thinks it's over.
+  (sleep 1500)
+  ;; It is not over.
+<b>  (let ((shots 30))
+    (foreach (lambda (i)
+               (emit (opponent) 0 (+ 12 (mod i 3)) (terrain (player)) 0)
+               (sleep (+ 70 i)))
+             (range 0 shots)))</b>
+  (sleep 1200)
+  (let ((sel (<b>await</b> (dialog-choice* (tr (s+ "<c:Redbeard:12>Yaargh!! I'm just a simple marauder, "
+                                            "trying to earn a decent living here! "
+                                            "[via petty extortion, how else?] <B:0> "
+                                            "So what's it gonna be? Last chance..."))
+                                    (tr '("Pay 600@."
+                                          "Fight back."))))))
+    (<b>case</b> sel
+      (0 (on-dialog-accepted))
+      (1 (on-dialog-declined)))))        
+    </code></pre>
+    <p>
+      Now we've edited the script and want to test it. All we need to do is run
+      the repack.sh script, which we previously extracted from the rom file:
+    </p>
+    <pre><code>
+ modding % chmod +x repack.sh 
+ modding % ./repack.sh       
+creating fs.bin...
+encoding 708 files...
+symbol tab count: 815
+constant tab count: 29
+encoded 20677776 bytes
+done!</code></pre>
+    <p>Now, let's run the Skyland.gba ROM and see how it looks:</p>
+    <img src="img/blog/redbeard_bluff_mod.gif"></img>
+    <p>That's quite dramatic! :D</p>
+    <p>Now, suppose you ran into an issue when editing the script, and wanted to
+    see what was going wrong. The game actually includes an onscreen script
+    debugger! You can either use the <code>breakpoint-register</code> function
+    to declare a breakpoint by specifying the symbol name of a function, or you
+    can simply call the <code>breakpoint</code> function anywhere in a
+    script.</p>
+    <pre><code>
+(<b>defn/temp</b> handle-bluff ()
+  (breakpoint)        
+  ...)
+    </code></pre>
+    <p>If we rebuild and run the game again, we'll enter the debugger when
+    hitting the breakpoint expression!</p>
+    <img src="img/blog/skyland_breakpoint.png"></img>
+    <p>
+      Finally, I briefly mentioned the localization system when talking about
+      the <code>tr</code> tags in the scripts. If you wanted to translate the
+      game into a new language, you would just need to create new files in the
+      strings directory (follow the Spanish translation as an example), and use
+      the repack.sh script to zip the ROM back up! For more details about
+      Skyland LISP, you can find a much more detailed description in the help/
+      folder that we unpacked from the ROM earlier! Have fun scripting!
+    </p>
+  </body>
+</html>
