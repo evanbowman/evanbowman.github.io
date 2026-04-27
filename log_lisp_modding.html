@@ -36,14 +36,13 @@
       <h3>The Skyland LISP Modding System</h3>
     </div>
     <p>
-      <a href="https://evanbowman.itch.io/skyland">Skyland</a>, one of my
-      long-standing Gameboy Advance homebrew projects, has a fairly extensive
-      modding system, requiring only a copy of the game's ROM file and
-      downloading a script! I'd like to demonstrate the process of modding the
-      game by showing how to extract scripts from the rom, edit one of them, and
-      rebuild the game. Let's start by picking a level scenario: I've chosen a
-      simple one where the player encounters an angry pirate character called
-      Redbeard!
+      <a href="https://evanbowman.itch.io/skyland">Skyland</a>, a GBA homebrew
+      RTS I've been working on for years, has a fairly extensive modding
+      system. I'd like to demonstrate the process by extracting scripts from the
+      ROM, editing one, and rebuilding the game-all you need is a copy of the
+      ROM and a Python script. Let's start by picking a level scenario: I've
+      chosen a simple one where the player encounters an angry pirate character
+      called Redbeard!
     </p>
     <p>
       Once the opening level dialog finishes, the game presents you with a few
@@ -203,7 +202,9 @@ done!</code></pre>
   ...)
     </code></pre>
     <p>If we rebuild and run the game again, we'll enter the debugger when
-    hitting the breakpoint expression!</p>
+    hitting the breakpoint expression! Using the left and right dpad buttons,
+    you can inspect variables, and look at the contents of the call stack,
+    function arguments, etc.</p>
     <img src="img/blog/skyland_breakpoint.png"></img>
     <p>
       Finally, I briefly mentioned the localization system when talking about
