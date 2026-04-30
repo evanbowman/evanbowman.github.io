@@ -37,12 +37,15 @@
     </div>
     <p>
       <a href="https://evanbowman.itch.io/skyland">Skyland</a>, a GBA homebrew
-      RTS I've been working on for years, has a fairly extensive modding
-      system. I'd like to demonstrate the process by extracting scripts from the
-      ROM, editing one, and rebuilding the game-all you need is a copy of the
-      ROM and a Python script. Let's start by picking a level scenario: I've
-      chosen a simple one where the player encounters an angry pirate character
-      called Redbeard!
+      RTS I've been working on for years, has a fairly extensive modding system,
+      allowing you to unpack a rom file and play with the scripts--something
+      which, at least at the time of writing, is somewhat unusual for GBA
+      homebrew. If you're unfamiliar with the game, I encourage you to try it
+      out before reading the modding tutorial! I'd like to demonstrate the
+      process by extracting scripts from the ROM, editing one, and rebuilding
+      the game-all you need is a copy of the ROM and a Python script. Let's
+      start by picking a level scenario: I've chosen a simple one where the
+      player encounters an angry pirate character called Redbeard!
     </p>
     <p>
       Once the opening level dialog finishes, the game presents you with a few
@@ -187,7 +190,9 @@ symbol tab count: 815
 constant tab count: 29
 encoded 20677776 bytes
 done!</code></pre>
-    <p>Now, let's run the Skyland.gba ROM and see how it looks:</p>
+    <p>Now, let's run the Skyland.gba ROM and see how it looks: (note: to get to
+    the level more easily, I also hard-coded the level path in
+    scripts/event/neutral.lisp)</p>
     <img src="img/blog/redbeard_bluff_mod.gif"></img>
     <p>That's quite dramatic! :D</p>
     <p>Now, suppose you ran into an issue when editing the script, and wanted to
